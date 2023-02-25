@@ -31,14 +31,15 @@ export default class Controller {
 
   render() {
     if (this.store.searchKeyword.length > 0) {
-      console.log(this.store.searchKeyword.length, "검색결과가 있음");
-      this.tabView.hide();
-      this.searchResultView.show(this.store.searchResult);
-      return;
+      return this.renderSearchResult();
     }
 
-    this.tabView.show();
-    console.log(this.store.searchKeyword.length, "검색결과 없음, 리셋했음");
+    this.tabView.show(this.store.selectedTab);
     this.searchResultView.hide();
+  }
+
+  renderSearchResult() {
+    this.tabView.hide();
+    this.searchResultView.show(this.store.searchResult);
   }
 }

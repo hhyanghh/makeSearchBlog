@@ -1,4 +1,5 @@
 const tag = "[store]";
+import { TabType } from "./views/TabView.js";
 
 export default class Store {
   constructor(storage) {
@@ -9,6 +10,7 @@ export default class Store {
 
     this.searchKeyword = "";
     this.searchResult = [];
+    this.selectedTab = TabType.KEYWORD;
   }
 
   search(keyword) {
