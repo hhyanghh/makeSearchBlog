@@ -43,4 +43,10 @@ export default class SearchFormView extends View {
     console.log(tag, "reset 버튼 클릭 >>>");
     this.emit("@reset");
   }
+
+  show(value = "") {
+    this.inputElement.value = value;
+    this.showResetButton(this.inputElement.value.length > 0);
+    super.show();
+  }
 }
